@@ -11,7 +11,7 @@
                     height="150px"
                     src="/images/unap.jpg"
                 >
-                    <v-card-title>COLEGIO 32
+                    <v-card-title>COLEGIO INDUSTRIAL 32
                     </v-card-title>
                     <v-card-subtitle class="">
                         <strong> INGRESAR AL SISTEMA</strong>
