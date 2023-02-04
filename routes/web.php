@@ -7,28 +7,14 @@ use App\Http\Controllers\Estudiantes\EstudianteController as Estudiante_Estudian
 use App\Http\Controllers\EstudiantesController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MatriculasController;
-use App\Http\Controllers\OficinaController;
-use App\Http\Controllers\PDFController;
 use App\Http\Controllers\PersonasController;
 use App\Http\Controllers\ReportesController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return redirect('/login');
 });
-
-
 
 Route::get('/login', [LoginController::class, 'index'])
     ->name('index');
@@ -58,31 +44,21 @@ Route::middleware(['auth', 'onlyAdmin'])->name('admin.')->prefix('admin')->group
         Route::get('/', 'index')->name('index');
     });
 
-
     Route::controller(MatriculasController::class)->name('matriculas.')->prefix('matriculas')->group(function () {
         Route::get('/', 'index')->name('index');
     });
-
-
     Route::controller(CursosController::class)->name('cursos.')->prefix('cursos')->group(function () {
         Route::get('/', 'index')->name('index');
     });
-
-
     Route::controller(PersonasController::class)->name('personas.')->prefix('personas')->group(function () {
         Route::get('/', 'index')->name('index');
     });
-
     Route::controller(ReportesController::class)->name('reportes.')->prefix('reportes')->group(function () {
         Route::get('/', 'index')->name('index');
     });
-
-  
 });
 
 Route::middleware(['auth', 'onlyInve'])->name('estudiantes.')->prefix('estudiantes')->group(function () {
-
     Route::get('/', [Estudiante_EstudianteController::class, 'index'])
     ->name('index');
-
 });

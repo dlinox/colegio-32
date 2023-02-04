@@ -16,31 +16,39 @@ class UsuariosDemo extends Seeder
     public function run()
     {
         User::create([
-            'nombres' => 'Marcos Admin',
-            'apellidos' => 'Peres',
+            'nombres' => 'Admin',
+            'paterno' => 'Peres',
+            'materno' => 'Peres',
+            'celular' => '911111111',
+            'dni' => '11111111',
             'rol' => '1',
             'estado' => 1,
-            'email' => 'nearlino20@gmail.com',
+            'email' => 'admin@gmail.com',
             'password' => Hash::make('demo'),
         ])->assignRole('Administrador');
 
         User::create([
             'nombres' => 'Pepe Inve',
-            'apellidos' => 'Martinez',
+            'paterno' => 'Martinez',
+            'materno' => 'Martinez',
+            'celular' => '922222222',
+            'dni' => '22222222',
             'rol' => '2',
             'estado' => 1,
-            'email' => 'dpumaticona@gmail.com',
+            'email' => 'docente1@gmail.com',
             'password' => Hash::make('demo'),
-        ])->assignRole('Estudiante');
+        ])->assignRole('Docente');
 
         User::create([
             'nombres' => 'Eric Gabriel Inve',
-            'apellidos' => 'Chuquimia Mariaca',
+            'paterno' => 'Chuquimia',
+            'materno' => 'Mariaca',
+            'celular' => '933333333',
+            'dni' => '33333333',
             'rol' => '2',
             'estado' => 1,
-            'email' => 'ariellukezz@gmail.com',
+            'email' => 'docente2@gmail.com',
             'password' => Hash::make('demo'),
-        ])->assignRole('Estudiante');
-
+        ])->assignRole('Docente');
     }
 }
